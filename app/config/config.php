@@ -39,7 +39,7 @@ define('DB_PORT', getenv('DB_PORT') ?? '3306');
 define('DB_NAME', getenv('DB_NAME') ?? 'MVC');
 define('DB_USER', getenv('DB_USER') ?? 'MVC');
 define('DB_PASS', getenv('DB_PASS') ?? '7MSZ2gY1wjiKY3-d');
-define('DB_PASS', getenv('DB_PASS') ?? '/MVC');
+define('BASE_PATH', getenv('BASE_PATH') ?? '/MVC');
 
 
 
