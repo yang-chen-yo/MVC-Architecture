@@ -2,6 +2,18 @@
 
 class api{
 
+    private array $routes = [
+        //尚未登入
+        'noRestriction' => [
+    
+        ],
+        //已登入
+        'hasLogin' => [
+            
+        ]
+    ];
+    //權限之後再說
+    
     /**
      * @throws HttpStatusException
      */

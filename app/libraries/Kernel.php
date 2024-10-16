@@ -36,9 +36,9 @@ class kernel{
     /**
      * @throws HttpStatusException
      */
-    
+
     private function getUrl() {
-        $basePath = getenv('BASE_PATH') ?: '/MVC'; // 默認為'/MVC'
+        $basePath = BASE_PATH; 
         $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $url = str_replace($basePath . '/public', '', $url);
         $url = trim($url, '/');
