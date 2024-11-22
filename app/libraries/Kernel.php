@@ -1,8 +1,8 @@
 <?php
 
-class kernel{
-
-    public function __construct() {
+class Kernel
+{
+	public function __construct() {
         try {
             // get URL
 			$url = $this->getUrl();
@@ -31,21 +31,16 @@ class kernel{
               ]
             );
 		}
-    }
+	}
 
     /**
      * @throws HttpStatusException
      */
-
     private function getUrl() {
-        $basePath = BASE_PATH; 
-        $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $url = str_replace($basePath . '/public', '', $url);
-        $url = trim($url, '/');
-        if (empty($url) || !preg_match('/^[a-zA-Z0-9\/-]*$/', $url)) {
-            throw new HttpStatusException(400); 
-        }
-        return $url;
+		if (isset($_GET['url']) && !empty($_GET['url'])) {
+		  	return $_GET['url'];
+		} else {
+		  	throw new HttpStatusException(400);
+		}
     }
-    
 }
